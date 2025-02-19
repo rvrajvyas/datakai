@@ -145,9 +145,13 @@ const App = () => {
   const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection }) => (
     <nav className="fixed w-full bg-black/95 backdrop-blur-md z-50">
       <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-        <div className="text-2xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-          DataKai
+//        <div className="text-2xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
+//          DataKai
+//        </div>
+        <div className="flex items-center">
+          <img src="/logo.png" alt="DataKai Logo" className="h-12 w-auto" />
         </div>
+
         <div className="md:hidden">
           {/* ✅ Now setIsMenuOpen is correctly accessed */}
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white">
