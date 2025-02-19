@@ -1,0 +1,281 @@
+import React, { useState } from 'react';
+import { ChevronRight, Menu, X, Code, Gamepad, BookOpen, Users, Briefcase, Mail } from 'lucide-react';
+
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <nav className="fixed w-full bg-black/95 backdrop-blur-md z-50">
+      <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+        <div className="text-2xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
+          DataKai
+        </div>
+        <div className="md:hidden">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white">
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+        <div className="hidden md:flex space-x-8">
+          {['Products', 'About', 'Team', 'Careers', 'Contact'].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="text-white/80 hover:text-white transition-colors"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+      </div>
+      {isMenuOpen && (
+        <div className="md:hidden bg-zinc-900 border-t border-zinc-800">
+          {['Products', 'About', 'Team', 'Careers', 'Contact'].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="block px-6 py-4 text-white/80 hover:text-white hover:bg-zinc-800 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+      )}
+    </nav>
+  );
+};
+
+const Hero = () => (
+  <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black px-6">
+    <div className="absolute inset-0 w-[200%] h-[200%] animate-[spin_20s_linear_infinite]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(192,192,192,0.1)_0%,rgba(10,10,10,0)_70%)]" />
+    </div>
+    <div className="max-w-5xl text-center relative z-10 mt-[-80px]">
+      <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-white tracking-wide">
+        Shaping Digital Future
+      </h1>
+      <p className="text-xl md:text-2xl text-gray-400 mb-16 tracking-wide">
+        Pioneering AI, Gaming, and Learning Solutions for Tomorrow's Innovation
+      </p>
+      <div className="flex flex-row gap-6 justify-center">
+        <a
+          href="#products"
+          className="px-12 py-4 rounded-md bg-gradient-to-r from-gray-100 to-white text-black font-semibold hover:scale-105 transition-transform"
+        >
+          Explore Our Products
+        </a>
+        <a
+          href="#contact"
+          className="px-12 py-4 rounded-md bg-transparent border-2 border-gray-600 text-white hover:border-gray-400 transition-colors hover:scale-105"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+);
+
+const ProductCard = ({ title, description, icon: Icon }) => (
+  <div className="p-8 rounded-lg bg-gradient-to-br from-zinc-900 to-zinc-800 border border-gray-800 hover:border-gray-700 transition-all hover:-translate-y-1">
+    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center mb-6">
+      <Icon className="text-white" size={24} />
+    </div>
+    <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
+    <p className="text-gray-400 mb-6">{description}</p>
+    <a
+      href="#"
+      className="inline-flex items-center text-white hover:text-gray-300 transition-colors"
+    >
+      Learn More <ChevronRight size={16} className="ml-1" />
+    </a>
+  </div>
+);
+
+const Products = () => {
+  const products = [
+    {
+      title: 'AI Influencers',
+      description: 'Next-generation virtual personalities powered by advanced AI, creating authentic connections and engaging content.',
+      icon: Code
+    },
+    {
+      title: 'Gaming Innovation',
+      description: 'Immersive gaming experiences that push the boundaries of technology and storytelling.',
+      icon: Gamepad
+    },
+    {
+      title: 'LMS Portal',
+      description: 'Advanced learning management system designed for modern education and corporate training needs.',
+      icon: BookOpen
+    },
+  ];
+
+  return (
+    <section id="products" className="py-24 px-6 bg-black">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
+          Our Products
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product, index) => (
+            <ProductCard key={index} {...product} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const TeamMember = ({ name, role, image }) => (
+  <div className="text-center">
+    <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+      <img src={`/api/placeholder/128/128`} alt={name} className="w-full h-full object-cover" />
+    </div>
+    <h3 className="text-xl font-semibold text-white mb-1">{name}</h3>
+    <p className="text-gray-400">{role}</p>
+  </div>
+);
+
+const Team = () => {
+  const team = [
+    { name: 'Alex Chen', role: 'CEO & Founder' },
+    { name: 'Sarah Johnson', role: 'CTO' },
+    { name: 'Michael Kumar', role: 'Head of AI' },
+    { name: 'Emily Rodriguez', role: 'Lead Game Designer' }
+  ];
+
+  return (
+    <section id="team" className="py-24 px-6 bg-zinc-900">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
+          Our Team
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+          {team.map((member, index) => (
+            <TeamMember key={index} {...member} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Stats = () => {
+  const stats = [
+    { number: '5M+', label: 'Active Users' },
+    { number: '50+', label: 'Team Members' },
+    { number: '3', label: 'Products Launched' },
+    { number: '99.9%', label: 'Uptime' }
+  ];
+
+  return (
+    <section className="py-24 px-6 bg-black border-y border-zinc-800">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map(({ number, label }, index) => (
+            <div key={index} className="text-center">
+              <div className="text-4xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent mb-2">
+                {number}
+              </div>
+              <div className="text-gray-400">{label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Careers = () => {
+  const positions = [
+    { title: 'Senior AI Engineer', department: 'Engineering', location: 'Remote' },
+    { title: 'Game Developer', department: 'Gaming', location: 'New York' },
+    { title: 'UI/UX Designer', department: 'Design', location: 'Remote' },
+  ];
+
+  return (
+    <section id="careers" className="py-24 px-6 bg-zinc-900">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
+          Join Our Team
+        </h2>
+        <div className="space-y-4">
+          {positions.map((position, index) => (
+            <div key={index} className="p-6 rounded-lg bg-black border border-zinc-800 hover:border-zinc-700 transition-all">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-2">{position.title}</h3>
+                  <p className="text-gray-400">{position.department} · {position.location}</p>
+                </div>
+                <a
+                  href="#"
+                  className="px-6 py-3 rounded bg-gradient-to-r from-gray-300 to-white text-black font-semibold hover:scale-105 transition-transform"
+                >
+                  Apply Now
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Contact = () => (
+  <section id="contact" className="py-24 px-6 bg-black">
+    <div className="max-w-3xl mx-auto text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-16 bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
+        Get in Touch
+      </h2>
+      <div className="space-y-8">
+        <a href="mailto:contact@datakai.com" className="flex items-center justify-center text-white hover:text-gray-300 transition-colors">
+          <Mail size={24} className="mr-2" />
+          contact@datakai.com
+        </a>
+        <div className="flex justify-center space-x-4">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="px-6 py-4 rounded-l bg-zinc-900 border border-zinc-800 focus:border-zinc-700 outline-none text-white w-full max-w-sm"
+          />
+          <button className="px-8 py-4 rounded-r bg-gradient-to-r from-gray-300 to-white text-black font-semibold hover:scale-105 transition-transform">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const Footer = () => (
+  <footer className="py-12 px-6 bg-zinc-900 border-t border-zinc-800">
+    <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div className="text-xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent mb-4 md:mb-0">
+        DataKai
+      </div>
+      <div className="flex space-x-8 text-gray-400">
+        {['Privacy', 'Terms', 'Careers', 'Contact'].map((item) => (
+          <a key={item} href="#" className="hover:text-white transition-colors">
+            {item}
+          </a>
+        ))}
+      </div>
+    </div>
+  </footer>
+);
+
+const App = () => (
+  <div className="bg-black text-white min-h-screen">
+    <Navbar />
+    <Hero />
+    <Products />
+    <Stats />
+    <Team />
+    <Careers />
+    <Contact />
+    <Footer />
+  </div>
+);
+
+export default App;
