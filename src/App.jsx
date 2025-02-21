@@ -204,55 +204,116 @@ const App = () => {
 
   // Hero Section
 const Hero = () => (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black px-6">
-      <div className="absolute inset-0 w-[200%] h-[200%] animate-[spin_30s_linear_infinite]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(192,192,192,0.1)_0%,rgba(10,10,10,0)_70%)]" />
+  <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black px-6">
+    {/* Animated background glow effects */}
+    <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+      <div className="absolute top-3/4 right-1/3 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+    </div>
+    
+    {/* Subtle grid overlay */}
+    <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.5)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+    
+    <div className="max-w-5xl text-center relative z-10 mt-[-80px]">
+      <div className="inline-block mb-6 px-4 py-1 bg-zinc-900/80 rounded-full border border-zinc-800 backdrop-blur-md">
+        <span className="text-gray-400 text-sm">Innovating the Digital Landscape</span>
       </div>
-      <div className="max-w-5xl text-center relative z-10 mt-[-80px]">
-        <div className="inline-block mb-6 px-4 py-1 bg-zinc-900/80 rounded-full border border-zinc-800">
-          <span className="text-gray-400 text-sm">Innovating the Digital Landscape</span>
-        </div>
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-white tracking-wide">
-          Shaping Digital Future
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-400 mb-16 tracking-wide">
-          Pioneering AI, Gaming, and Learning Solutions for Tomorrow's Innovation
-        </p>
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <a
-            href="#products"
-            className="px-12 py-4 rounded-md bg-gradient-to-r from-gray-100 to-white text-black font-semibold hover:scale-105 transition-transform"
-          >
-            Explore Our Products
-          </a>
-          <a
-            href="#contact"
-            className="px-12 py-4 rounded-md bg-transparent border-2 border-gray-600 text-white hover:border-gray-400 transition-colors hover:scale-105"
-          >
-            Get in Touch
-          </a>
-        </div>
-      </div>
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a href="#products" className="w-10 h-10 border border-gray-700 rounded-full flex items-center justify-center">
-          <ChevronRight size={20} className="text-gray-500 rotate-90" />
+      
+      <h1 className="text-5xl md:text-6xl font-extrabold mb-8 tracking-wide bg-gradient-to-r from-blue-300 via-purple-200 to-pink-300 bg-clip-text text-transparent">
+        Shaping Digital Future
+      </h1>
+      
+      <p className="text-xl md:text-2xl text-gray-400 mb-16 tracking-wide max-w-3xl mx-auto">
+        Pioneering AI, Gaming, and Learning Solutions for Tomorrow's Innovation
+      </p>
+      
+      <div className="flex flex-col sm:flex-row gap-6 justify-center">
+        <a
+          href="#products"
+          className="group relative px-12 py-4 rounded-md bg-transparent border border-white/30 font-semibold overflow-hidden transition-all duration-300"
+        >
+          {/* Button glow effect */}
+          <span className="absolute inset-0 bg-gradient-to-r from-blue-500/40 to-purple-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md"></span>
+          <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+          <span className="relative text-white">Explore Our Products</span>
+        </a>
+        
+        <a
+          href="#contact"
+          className="px-12 py-4 rounded-md bg-transparent border-2 border-gray-600 text-white hover:border-gray-400 transition-colors hover:scale-105"
+        >
+          Get in Touch
         </a>
       </div>
-    </section>
-  );
-
-const ProductCard = ({ title, description, icon: Icon }) => (
-    <div className="p-8 rounded-lg bg-gradient-to-br from-zinc-900 to-zinc-800 border border-zinc-800 hover:border-zinc-700 transition-all">
-      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center mb-6">
-        <Icon className="text-white" size={24} />
-      </div>
-      <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
-      <p className="text-gray-400 mb-6">{description}</p>
-      <a href="#" className="inline-flex items-center text-white hover:text-gray-300 transition-colors">
-        Learn More <ChevronRight size={16} className="ml-1" />
+    </div>
+    
+    <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <a href="#products" className="w-10 h-10 border border-gray-700 rounded-full flex items-center justify-center">
+        <ChevronRight size={20} className="text-gray-500 rotate-90" />
       </a>
     </div>
+  </section>
+);
+
+const ProductCard = ({ title, description, icon: Icon, color }) => {
+  // Define neon color schemes based on the color prop
+  const colorSchemes = {
+    purple: {
+      bgGradient: 'bg-gradient-to-br from-purple-900/20 to-purple-900/10',
+      borderGlow: 'before:bg-purple-500/20',
+      iconGlow: 'bg-gradient-to-br from-purple-400 to-purple-600',
+      textGlow: 'text-purple-300'
+    },
+    pink: {
+      bgGradient: 'bg-gradient-to-br from-pink-900/20 to-pink-900/10',
+      borderGlow: 'before:bg-pink-500/20',
+      iconGlow: 'bg-gradient-to-br from-pink-400 to-pink-600',
+      textGlow: 'text-pink-300'
+    },
+    blue: {
+      bgGradient: 'bg-gradient-to-br from-blue-900/20 to-blue-900/10',
+      borderGlow: 'before:bg-blue-500/20',
+      iconGlow: 'bg-gradient-to-br from-blue-400 to-blue-600',
+      textGlow: 'text-blue-300'
+    },
+    teal: {
+      bgGradient: 'bg-gradient-to-br from-teal-900/20 to-teal-900/10',
+      borderGlow: 'before:bg-teal-500/20',
+      iconGlow: 'bg-gradient-to-br from-teal-400 to-teal-600',
+      textGlow: 'text-teal-300'
+    }
+  };
+
+  // Default to purple if no color is specified
+  const scheme = colorSchemes[color] || colorSchemes.purple;
+
+  return (
+    <div className={`relative group p-8 rounded-lg ${scheme.bgGradient} border border-zinc-800 overflow-hidden transition-all duration-500 hover:scale-105`}>
+      {/* Neon glow effect around border */}
+      <div className={`absolute inset-0 before:content-[''] before:absolute before:inset-0 before:rounded-lg before:blur-xl before:opacity-0 group-hover:before:opacity-100 before:transition-opacity before:duration-1000 ${scheme.borderGlow}`}></div>
+      
+      {/* Icon with neon glow */}
+      <div className={`relative w-14 h-14 rounded-lg ${scheme.iconGlow} flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl group-hover:shadow-current/20 transition-all duration-500`}>
+        <Icon className="text-white" size={28} />
+      </div>
+      
+      {/* Text content */}
+      <div className="relative z-10">
+        <h3 className={`text-2xl font-bold ${scheme.textGlow} mb-4 transition-colors duration-300`}>{title}</h3>
+        <p className="text-gray-400 mb-6 transition-colors duration-300 group-hover:text-gray-300">{description}</p>
+        
+        {/* Call to action with animated arrow */}
+        <a href="#" className={`inline-flex items-center ${scheme.textGlow} hover:brightness-125 transition-all duration-300`}>
+          Learn More 
+          <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">
+            <ChevronRight size={16} />
+          </span>
+        </a>
+      </div>
+    </div>
   );
+};
 
 const TeamMember = ({ name, role }) => (
     <div className="text-center">
@@ -284,43 +345,50 @@ const Careers = () => (
 
   // Products Section
 const Products = () => {
-    const products = [
-      {
-        title: 'AI Influencers',
-        description: 'Next-generation virtual personalities powered by advanced AI, creating authentic connections and engaging content.',
-        icon: Code
-      },
-      {
-        title: 'Gaming Innovation',
-        description: 'Immersive gaming experiences that push the boundaries of technology and storytelling.',
-        icon: Gamepad
-      },
-      {
-        title: 'LMS Portal',
-        description: 'Advanced learning management system designed for modern education and corporate training needs.',
-        icon: BookOpen
-      },
-    ];
+  const products = [
+    {
+      title: 'AI Influencers',
+      description: 'Next-generation virtual personalities powered by advanced AI, creating authentic connections and engaging content.',
+      icon: Code,
+      color: 'pink'
+    },
+    {
+      title: 'Gaming Innovation',
+      description: 'Immersive gaming experiences that push the boundaries of technology and storytelling.',
+      icon: Gamepad,
+      color: 'blue'
+    },
+    {
+      title: 'LMS Portal',
+      description: 'Advanced learning management system designed for modern education and corporate training needs.',
+      icon: BookOpen,
+      color: 'teal'
+    },
+  ];
 
-    return (
-      <section id="products" className="py-24 px-6 bg-gradient-to-b from-black to-zinc-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="inline-block text-gray-400 text-sm tracking-wider uppercase mb-3">Our Products</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-              Industry-leading Digital Solutions
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <ProductCard key={index} {...product} />
-            ))}
-          </div>
+  return (
+    <section id="products" className="py-24 px-6 bg-black relative overflow-hidden">
+      {/* Background ambient light effects */}
+      <div className="absolute top-20 left-20 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <span className="inline-block text-gray-400 text-sm tracking-wider uppercase mb-3">Our Products</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-gray-300 via-purple-200 to-white bg-clip-text text-transparent">
+            Industry-leading Digital Solutions
+          </h2>
         </div>
-      </section>
-    );
-  };
-
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product, index) => (
+            <ProductCard key={index} {...product} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
   // Features Section
 const Features = () => {
     const features = [
