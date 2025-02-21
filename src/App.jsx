@@ -220,7 +220,7 @@ const Hero = () => (
         <span className="text-gray-400 text-sm">Innovating the Digital Landscape</span>
       </div>
       
-      <h1 className="text-5xl md:text-6xl font-extrabold mb-8 tracking-wide bg-gradient-to-r from-blue-300 via-purple-200 to-pink-300 bg-clip-text text-transparent">
+      <h1 className="text-7xl md:text-6xl font-extrabold mb-8 tracking-wide bg-gradient-to-r from-blue-300 via-purple-200 to-pink-300 bg-clip-text text-transparent">
         Shaping Digital Future
       </h1>
       
