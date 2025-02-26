@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronRight, Menu, X, Code, Gamepad, BookOpen, Users, Briefcase, Mail, 
          Server, ShieldCheck, Zap, Cpu, Database, Cloud, Monitor, Globe, 
          ArrowRight, Star, MessageSquare } from 'lucide-react';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+// import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // Animated Counter Component
 const AnimatedCounter = ({ value, label }) => {
@@ -131,7 +131,6 @@ const App = () => {
       <Features />
       <Technology />
       <Stats />
-      <SpeedInsights/>
       <CaseStudies />
       <Testimonials />
       <Team />
