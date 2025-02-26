@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { ChevronRight, Menu, X, Code, Gamepad, BookOpen, Users, Briefcase, Mail, 
          Server, ShieldCheck, Zap, Cpu, Database, Cloud, Monitor, Globe, 
          ArrowRight, Star, MessageSquare } from 'lucide-react';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+         import { useRef } from "react";
+
+         
+//import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // Animated Counter Component
 const AnimatedCounter = ({ value, label }) => {
@@ -131,7 +134,7 @@ const App = () => {
       <Features />
       <Technology />
       <Stats />
-      <SpeedInsights/>
+      
       <CaseStudies />
       <Testimonials />
       <Team />
@@ -209,7 +212,7 @@ const Hero = () => (
   <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black px-6">
     {/* Animated background glow effects */}
     <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
       <div className="absolute top-3/4 right-1/3 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
     </div>
@@ -222,9 +225,10 @@ const Hero = () => (
         <span className="text-gray-400 text-sm">Innovating the Digital Landscape</span>
       </div>
       
-      <h1 className="text-7xl md:text-6xl font-extrabold mb-8 tracking-wide bg-gradient-to-r from-blue-300 via-purple-200 to-pink-300 bg-clip-text text-transparent">
-        Shaping Digital Future
-      </h1>
+      <h1 className="text-7xl md:text-6xl font-extrabold mb-8 tracking-wide  text-transparent bg-gradient-to-r from-blue-300 via-purple-200 to-pink-300 bg-clip-text leading-relaxed"style={{ lineHeight: "1.3" }}>
+  Shaping Digital Future
+</h1>
+
       
       <p className="text-xl md:text-2xl text-gray-400 mb-16 tracking-wide max-w-3xl mx-auto">
         Pioneering AI, Gaming, and Learning Solutions for Tomorrow's Innovation
@@ -377,7 +381,7 @@ const Products = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block text-gray-400 text-sm tracking-wider uppercase mb-3">Our Products</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-gray-300 via-purple-200 to-white bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-gray-300 via-purple-200 to-white bg-clip-text text-transparent"style={{ lineHeight: "1.3" }}>
             Industry-leading Digital Solutions
           </h2>
         </div>
@@ -392,58 +396,186 @@ const Products = () => {
   );
 };
   // Features Section
-const Features = () => {
-    const features = [
-      {
-        title: "High Performance",
-        description: "Our infrastructure is built for speed and reliability, ensuring your applications run smoothly at scale.",
-        icon: Zap
-      },
-      {
-        title: "Advanced Security",
-        description: "Enterprise-grade security protocols keep your data and applications safe from threats.",
-        icon: ShieldCheck
-      },
-      {
-        title: "Cloud Integration",
-        description: "Seamless integration with leading cloud platforms for maximum flexibility and scalability.",
-        icon: Cloud
-      },
-      {
-        title: "Real-time Analytics",
-        description: "Gain valuable insights with our powerful analytics tools, monitoring every aspect of performance.",
-        icon: Database
-      },
-      {
-        title: "Global Availability",
-        description: "Distributed infrastructure ensures your services are available anywhere, anytime.",
-        icon: Globe
-      },
-      {
-        title: "Responsive Design",
-        description: "All our solutions are built with responsive design to work flawlessly across all devices.",
-        icon: Monitor
-      }
-    ];
-
+ 
+  const features = [
+    { title: "High Performance", description: "Optimized for speed & efficiency.", icon: Zap, image: "/src/assets/images/1225128.png" },
+    { title: "Advanced Security", description: "Enterprise-grade protection.", icon: ShieldCheck, image: "/src/assets/images/image2.jpg" },
+    { title: "Cloud Integration", description: "Seamless cloud connectivity.", icon: Cloud, image: "/src/assets/images/snipp.PNG" },
+    { title: "Real-time Analytics", description: "Monitor performance instantly.", icon: Database, image: "/images/analytics.jpg" },
+    { title: "Global Availability", description: "Accessible anywhere, anytime.", icon: Globe, image: "/images/global.jpg" },
+    { title: "Responsive Design", description: "Optimized across devices.", icon: Monitor, image: "/images/responsive.jpg" },
+  ];
+  
+  const Features = () => {
+    const scrollRef = useRef(null);
+  
     return (
-      <section id="features" className="py-24 px-6 bg-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="inline-block text-gray-400 text-sm tracking-wider uppercase mb-3">Core Features</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-              Built for Performance
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <FeatureCard key={index} {...feature} />
-            ))}
+      <section id="features" className="py-24 bg-black text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-8 text-center">
+            Built for Performance
+          </h2>
+  
+          {/* Horizontal Scroll Container */}
+          <div className="relative">
+            <div
+              ref={scrollRef}
+              className="flex space-x-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory 
+                         px-4 py-6"
+              style={{ scrollBehavior: "smooth" }}
+            >
+              {features.map((feature, index) => (
+                <div key={index} className="relative flex-shrink-0 w-[56vw] max-w-[400px] h-[72vh] 
+                       bg-zinc-900 border border-zinc-700 rounded-xl overflow-hidden snap-center 
+                       transition-transform duration-300 hover:scale-105 group">
+  
+                  {/* Background Image */}
+                  <div className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:opacity-100 transition-opacity duration-500" 
+                       style={{ backgroundImage: `url(${feature.image})` }}>
+                  </div>
+  
+                  {/* Dark Overlay for Text Readability */}
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+  
+                  {/* Card Content */}
+                  <div className="relative z-10 flex flex-col justify-start h-full p-8">
+                    {/* Icon */}
+                    <div className="w-14 h-14 flex items-center justify-center 
+                                    bg-gradient-to-br from-gray-700 to-gray-800 
+                                    rounded-lg mb-4">
+                      <feature.icon size={32} className="text-white" />
+                    </div>
+  
+                    {/* Text */}
+                    <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                    <p className="text-gray-300">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
     );
   };
+  
+  // const features = [
+  //   { title: "High Performance", description: "Optimized for speed & efficiency.", icon: Zap },
+  //   { title: "Advanced Security", description: "Enterprise-grade protection.", icon: ShieldCheck },
+  //   { title: "Cloud Integration", description: "Seamless cloud connectivity.", icon: Cloud },
+  //   { title: "Real-time Analytics", description: "Monitor performance instantly.", icon: Database },
+  //   { title: "Global Availability", description: "Accessible anywhere, anytime.", icon: Globe },
+  //   { title: "Responsive Design", description: "Optimized across devices.", icon: Monitor },
+  // ];
+  
+  // const Features = () => {
+  //   const scrollRef = useRef(null);
+  
+  //   return (
+  //     <section id="features" className="py-24 bg-black text-white overflow-hidden">
+  //       <div className="max-w-7xl mx-auto px-6">
+  //         <h2 className="text-4xl font-bold mb-8 text-center">
+  //           Built for Performance
+  //         </h2>
+          
+  //         {/* Horizontal Scroll Container */}
+  //         <div className="relative">
+  //           <div
+  //             ref={scrollRef}
+  //             className="flex space-x-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory 
+  //                        px-4 py-6"
+  //             style={{ scrollBehavior: "smooth" }}
+  //           >
+  //             {features.map((feature, index) => (
+  //               <div key={index} className="relative flex-shrink-0 w-[56vw] max-w-[400px] h-[72vh] 
+  //                    bg-zinc-900 border border-zinc-700 rounded-xl p-8 snap-center 
+  //                    transition-transform duration-300 hover:scale-105 group">
+  
+  //                 {/* Neon Glow Effect */}
+  //                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 
+  //                                 opacity-20 blur-xl rounded-xl transition-all duration-500 
+  //                                 group-hover:opacity-60 group-hover:blur-2xl"></div>
+  
+  //                 {/* Outer Glow for Extra Depth */}
+  //                 <div className="absolute inset-0 rounded-xl shadow-[0_0_20px_rgba(128,0,128,0.2)] 
+  //                                group-hover:shadow-[0_0_30px_rgba(128,0,255,0.5)] transition-all"></div>
+  
+  //                 {/* Card Content */}
+  //                 <div className="relative z-10">
+  //                   <div className="w-14 h-14 flex items-center justify-center 
+  //                                   bg-gradient-to-br from-gray-700 to-gray-800 
+  //                                   rounded-lg mb-4">
+  //                     <feature.icon size={32} className="text-white" />
+  //                   </div>
+  //                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+  //                   <p className="text-gray-400">{feature.description}</p>
+  //                 </div>
+  //               </div>
+  //             ))}
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </section>
+  //   );
+  // };
+
+  
+ 
+
+
+
+// const Features = () => {
+//     const features = [
+//       {
+//         title: "High Performance",
+//         description: "Our infrastructure is built for speed and reliability, ensuring your applications run smoothly at scale.",
+//         icon: Zap
+//       },
+//       {
+//         title: "Advanced Security",
+//         description: "Enterprise-grade security protocols keep your data and applications safe from threats.",
+//         icon: ShieldCheck
+//       },
+//       {
+//         title: "Cloud Integration",
+//         description: "Seamless integration with leading cloud platforms for maximum flexibility and scalability.",
+//         icon: Cloud
+//       },
+//       {
+//         title: "Real-time Analytics",
+//         description: "Gain valuable insights with our powerful analytics tools, monitoring every aspect of performance.",
+//         icon: Database
+//       },
+//       {
+//         title: "Global Availability",
+//         description: "Distributed infrastructure ensures your services are available anywhere, anytime.",
+//         icon: Globe
+//       },
+//       {
+//         title: "Responsive Design",
+//         description: "All our solutions are built with responsive design to work flawlessly across all devices.",
+//         icon: Monitor
+//       }
+//     ];
+
+//     return (
+//       <section id="features" className="py-24 px-6 bg-black">
+//         <div className="max-w-7xl mx-auto">
+//           <div className="text-center mb-16">
+//             <span className="inline-block text-gray-400 text-sm tracking-wider uppercase mb-3">Core Features</span>
+//             <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
+//               Built for Performance
+//             </h2>
+//           </div>
+//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+//             {features.map((feature, index) => (
+//               <FeatureCard key={index} {...feature} />
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+//     );
+//   };
 
   // Technology Stack Section
 const Technology = () => {
