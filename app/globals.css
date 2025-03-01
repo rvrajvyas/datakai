@@ -37,3 +37,34 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none !important;
 }
+
+@font-face {
+  font-family: 'Imperium';
+  src: url('/fonts/Imperium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sunflare';
+  src: url('/fonts/Sunflare.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cool';
+  src: url('/fonts/Coolvetica_Tg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  font-family: 'Cool', sans-serif !important;
+}
+@font-face {
+  font-family: 'RC';
+  src: url('/fonts/R&C-Demo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

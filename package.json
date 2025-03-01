@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroui/navbar": "^2.2.13",
+    "@heroui/react": "^2.7.4",
+    "@heroui/system": "^2.4.11",
+    "@heroui/theme": "^2.4.11",
     "@tabler/icons-react": "^3.30.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.4.7",
     "lucide-react": "^0.476.0",
     "motion": "^12.4.7",
     "next": "15.2.0",
