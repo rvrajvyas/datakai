@@ -73,13 +73,13 @@ import { Card3D } from "@/components/ui/3dcard";
 import { useRef, useEffect, useState } from "react";
 
 export function Card3DScroll() {
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const cardRefs = useRef([]);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const cardData = [
     {
-      title: "High perfromance",
+      title: "High performance",
       description: "Our infrastructure is built for speed and reliability, ensuring your applications run smoothly at scale.",
       image: "/images/performance.jpg"
     },
@@ -99,7 +99,7 @@ export function Card3DScroll() {
       image: "/images/analytics.jpg"
     },
     {
-      title: "Global Availibily ",
+      title: "Global Availability",
       description: "Distributed infrastructure ensures your services are available anywhere, anytime.",
       image: "/images/global.jpg"
     },
@@ -110,10 +110,9 @@ export function Card3DScroll() {
     }
   ];
 
-  // Initialize references array
+  // Initialize references array correctly
   useEffect(() => {
-    // Initialize refs array with the correct length
-    cardRefs.current = Array(cardData.length).fill(null);
+    cardRefs.current = cardData.map(() => null);
   }, []);
 
   // Track scroll position
@@ -135,26 +134,26 @@ export function Card3DScroll() {
   useEffect(() => {
     requestAnimationFrame(() => {
       cardRefs.current.forEach((card, index) => {
-        if (!card) return;
-        
+        if (!card || !(card instanceof HTMLDivElement)) return;
+
         try {
           // Calculate the card's position relative to the viewport
           const rect = card.getBoundingClientRect();
           const centerPosition = rect.left + rect.width / 2;
           const viewportCenter = window.innerWidth / 2;
           const distanceFromCenter = centerPosition - viewportCenter;
-          
+
           // Calculate rotation and translation based on distance from center
           const rotationY = distanceFromCenter * 0.02; // Adjust multiplier for rotation intensity
           const translateZ = Math.abs(distanceFromCenter) < 200 ? 20 : 0; // Pop out cards near the center
-          
+
           // Apply transformations
           card.style.transform = `
             perspective(1000px) 
             rotateY(${rotationY}deg) 
             translateZ(${translateZ}px)
           `;
-          
+
           // Adjust opacity based on distance from center
           const opacity = 1 - Math.min(0.3, Math.abs(distanceFromCenter) / 1000);
           card.style.opacity = opacity.toString();
@@ -187,7 +186,9 @@ export function Card3DScroll() {
           {cardData.map((card, index) => (
             <div 
               key={index} 
-              ref={el => cardRefs.current[index] = el}
+              ref={el => {
+                cardRefs.current[index] = el;
+              }}
               className="w-80 sm:w-96 flex-shrink-0 transition-all duration-300"
               style={{ transformStyle: 'preserve-3d' }}
             >
