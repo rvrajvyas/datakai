@@ -68,3 +68,15 @@ html, body {
   font-weight: normal;
   font-style: normal;
 }
+
+html, body {
+  font-family: 'Cool', sans-serif !important;
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;     /* Firefox */
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none !important;  /* Chrome, Safari, Opera */
+}
