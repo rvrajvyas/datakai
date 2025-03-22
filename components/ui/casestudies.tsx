@@ -35,7 +35,7 @@ export function CaseStudies() {
           <span className="inline-block text-gray-400 text-sm tracking-wider uppercase mb-3">
             Success Stories
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
             Our Impact Across Industries
           </h2>
         </div>
@@ -44,17 +44,19 @@ export function CaseStudies() {
           {studies.map((study, index) => (
             <div
               key={index}
-              className="group cursor-pointer bg-zinc-900 border border-zinc-800 p-6 rounded-lg transition-all hover:scale-105"
+              className="group cursor-pointer bg-zinc-900 border border-zinc-800 p-6 rounded-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/40"
             >
               <div className="mb-4">
-                <h3 className="text-xl font-bold text-white">{study.title}</h3>
+                <h3 className="text-xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all">
+                  {study.title}
+                </h3>
               </div>
               <p className="text-gray-400">{study.description}</p>
               <div className="flex flex-wrap gap-2 mt-3">
                 {study.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 bg-zinc-800/80 text-xs text-gray-300 rounded-full"
+                    className="px-3 py-1 bg-zinc-800/80 text-xs text-gray-300 rounded-full transition-all hover:bg-purple-600 hover:text-white"
                   >
                     {tag}
                   </span>

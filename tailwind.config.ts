@@ -13,12 +13,12 @@ const config = {
         move: "move 5s linear infinite",
       },
       fontFamily: {
-        // Override the default sans font family
-        sans: ['Cool', 'system-ui', 'sans-serif'],
-        // Keep your other custom fonts
-        'montserrat': ['Montserrat', 'sans-serif'],
-        'poppins': ['Poppins', 'sans-serif'],
+        cool: ['Cool', 'sans-serif'],
+        imperium: ['Imperium', 'anas-serif'],
+        sunflare: ['Sunflare', 'serif'],
+        rc: ['RC', 'serif'],
       },
+      
       keyframes: {
         move: {
           "0%": { transform: "translateX(-200px)" },
@@ -29,5 +29,8 @@ const config = {
   },
   plugins: [require("tailwind-scrollbar-hide"), heroui()],
 };
+
+ 
+
 
 export default config;  

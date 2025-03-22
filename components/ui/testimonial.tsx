@@ -1,5 +1,3 @@
-"use client";
-
 import { Star } from "lucide-react";
 
 export function Testimonials() {
@@ -10,6 +8,7 @@ export function Testimonials() {
       author: "Alex Chen",
       position: "CTO",
       company: "TechInnovate",
+      color: "bg-gradient-to-r from-pink-500 to-yellow-500", // Custom gradient for testimonial 1
     },
     {
       quote:
@@ -17,6 +16,7 @@ export function Testimonials() {
       author: "Sarah Johnson",
       position: "Product Director",
       company: "GameVerse",
+      color: "bg-gradient-to-r from-purple-500 to-indigo-500", // Custom gradient for testimonial 2
     },
     {
       quote:
@@ -24,12 +24,13 @@ export function Testimonials() {
       author: "Michael Rodriguez",
       position: "Learning Director",
       company: "Global Enterprises",
+      color: "bg-gradient-to-r from-green-500 to-teal-500", // Custom gradient for testimonial 3
     },
   ];
 
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-zinc-900 to-black relative">
-      <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-zinc-900 to-transparent opacity-80"></div>
+    <section className="py-24 px-6 bg-white relative">
+      <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-white to-transparent opacity-80"></div>
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
@@ -39,7 +40,7 @@ export function Testimonials() {
               ))}
             </div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-6">
             What Our Clients Say
           </h2>
         </div>
@@ -48,9 +49,9 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-8 bg-zinc-900 rounded-lg border border-zinc-800 relative transition-all hover:scale-105"
+              className={`p-8 rounded-lg border border-zinc-800 relative transition-all hover:scale-105 ${testimonial.color}`}
             >
-              <p className="text-gray-300 mb-8">{testimonial.quote}</p>
+              <p className="text-white mb-8">{testimonial.quote}</p>
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center mr-4">
                   <span className="text-xl font-bold text-white">
@@ -59,7 +60,7 @@ export function Testimonials() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium">{testimonial.author}</h4>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-200 text-sm">
                     {testimonial.position}, {testimonial.company}
                   </p>
                 </div>

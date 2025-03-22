@@ -11,7 +11,7 @@ export function Stats() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-zinc-900 border-y border-zinc-800">
+    <section className="py-24 px-6 bg-white ">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
@@ -45,11 +45,11 @@ const AnimatedCounter = ({ value, label }: { value: number; label: string }) => 
 
   return (
     <div className="text-center">
-      <div className="text-4xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent mb-2">
+      <div className="text-4xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-black mb-2">
         {count}
         {label.includes("%") ? "%" : "+"}
       </div>
-      <div className="text-gray-400">{label}</div>
+      <div className="text-black">{label}</div>
     </div>
   );
 };

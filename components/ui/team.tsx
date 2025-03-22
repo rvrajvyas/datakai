@@ -47,7 +47,7 @@ export function Team() {
   ];
 
   return (
-    <section id="team" className="py-24 px-6 bg-zinc-900 relative overflow-hidden">
+    <section id="team" className="py-24 px-6 bg-white relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 opacity-10">
         {/* Background grid pattern */}
@@ -77,13 +77,13 @@ export function Team() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 opacity-0 animate-teamFadeIn" style={{ animationDelay: '0.1s' }}>
-          <span className="inline-block text-gray-400 text-sm tracking-wider uppercase mb-3">
+          <span className="inline-block text-black text-sm tracking-wider uppercase mb-3">
             Our Experts
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent mb-4">
+          <h2 className="text-6xl md:text-5xl font-bold text-center text-black mb-4">
             The Minds Behind DataKai
           </h2>
-          <p className="text-gray-400 max-w-3xl mx-auto">
+          <p className="text-gray-700 max-w-3xl mx-auto">
             Our team combines decades of experience in AI, gaming, and educational technology
             to deliver innovative solutions for tomorrow's challenges.
           </p>
@@ -106,16 +106,6 @@ export function Team() {
         @keyframes pulse-glow {
           0%, 100% { opacity: 0.05; transform: scale(1); }
           50% { opacity: 0.15; transform: scale(1.2); }
-        }
-        
-        @keyframes float-up-down {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        
-        @keyframes rotate-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
         }
         
         @keyframes teamFadeIn {
@@ -195,8 +185,8 @@ const TeamMember = ({ name, role, imageUrl, isActive, onClick }: TeamMemberProps
           transform: isHovered ? 'translateY(5px)' : 'translateY(0)'
         }}
       >
-        <h3 className="text-xl font-medium text-white mb-1">{name}</h3>
-        <p className="text-gray-400 mb-2">{role}</p>
+        <h3 className="text-xl font-medium text-black mb-1">{name}</h3>
+        <p className="text-gray-600 mb-2">{role}</p>
         
         {/* Animated underline */}
         <div className="h-0.5 w-0 bg-gradient-to-r from-transparent via-gray-500 to-transparent mx-auto transition-all duration-300"

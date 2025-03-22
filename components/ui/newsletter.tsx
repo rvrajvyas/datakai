@@ -1,40 +1,3 @@
-// "use client";
-
-// export  function Newsletter() {
-//   return (
-//     <section className="py-16 px-6 bg-gradient-to-b from-black to-zinc-900">
-//       <div className="max-w-5xl mx-auto bg-zinc-900 p-12 rounded-xl border border-zinc-800 relative overflow-hidden">
-//         <div className="absolute top-0 right-0 w-64 h-64 bg-zinc-800 rounded-full transform translate-x-1/3 -translate-y-1/3 opacity-20"></div>
-//         <div className="absolute bottom-0 left-0 w-64 h-64 bg-zinc-800 rounded-full transform -translate-x-1/3 translate-y-1/3 opacity-20"></div>
-        
-//         <div className="relative z-10 text-center">
-//           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-//             Stay Updated with DataKai's Innovations
-//           </h2>
-//           <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
-//             Subscribe to our newsletter to get the latest updates on our products, technology insights, and exclusive offers.
-//           </p>
-          
-//           <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-//             <input
-//               type="email"
-//               placeholder="Your email address"
-//               className="px-6 py-4 rounded-l-md bg-zinc-800 border border-zinc-700 focus:border-zinc-600 outline-none text-white w-full md:max-w-sm"
-//             />
-//             <button className="px-8 py-4 rounded-r-md bg-gradient-to-r from-gray-100 to-white text-black font-semibold hover:scale-105 transition-transform">
-//               Subscribe
-//             </button>
-//           </div>
-          
-//           <p className="text-gray-500 text-sm mt-4">
-//             We respect your privacy. Unsubscribe at any time.
-//           </p>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -97,47 +60,38 @@ export function Newsletter() {
   };
 
   return (
-    <section className="py-16 px-6 bg-gradient-to-b from-black to-zinc-900 relative overflow-hidden">
+    <section className="py-16 px-6 bg-white relative overflow-hidden">
       {/* Background with cool tech circuit patterns */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full">
-          {/* Circuit pattern lines */}
-          {[...Array(10)].map((_, i) => (
-            <div 
-              key={i}
-              className="absolute bg-white h-px" 
-              style={{
-                width: `${Math.random() * 200 + 100}px`,
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                opacity: 0.2 + Math.random() * 0.3,
-                transform: `rotate(${Math.random() * 360}deg)`
-              }}
-            />
-          ))}
-          
-          {/* Circuit nodes */}
-          {[...Array(15)].map((_, i) => (
-            <div 
-              key={i + 'node'} 
-              className="absolute rounded-full bg-white"
-              style={{
-                width: `${Math.random() * 8 + 4}px`,
-                height: `${Math.random() * 8 + 4}px`,
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                opacity: 0.2 + Math.random() * 0.4
-              }}
-            />
-          ))}
-        </div>
+        <div className="absolute inset-0" 
+          style={{
+            backgroundImage: 'radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.2) 2px, transparent 0)',
+            backgroundSize: '50px 50px'
+          }}
+        />
+        
+        {/* Animated glow orbs */}
+        {[...Array(5)].map((_, i) => (
+          <div 
+            key={i} 
+            className="absolute rounded-full blur-3xl"
+            style={{
+              width: `${Math.random() * 200 + 100}px`,
+              height: `${Math.random() * 200 + 100}px`,
+              backgroundColor: `rgba(255, 255, 255, 0.03)`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animation: `pulse-glow ${Math.random() * 10 + 15}s infinite alternate`
+            }}
+          />
+        ))}
       </div>
       
       {/* Floating particles container */}
       <div id="particles-container" className="absolute inset-0 overflow-hidden pointer-events-none" />
       
       <div 
-        className="max-w-5xl mx-auto bg-zinc-900 p-12 rounded-xl border border-zinc-800 relative overflow-hidden shadow-lg"
+        className="max-w-5xl mx-auto bg-white p-12 rounded-xl border border-gray-300 relative overflow-hidden shadow-lg"
         style={{
           boxShadow: isHovered ? '0 0 30px rgba(255, 255, 255, 0.1)' : '0 0 20px rgba(0, 0, 0, 0.5)'
         }}
@@ -145,8 +99,8 @@ export function Newsletter() {
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-zinc-800 rounded-full transform translate-x-1/3 -translate-y-1/3 opacity-20"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-zinc-800 rounded-full transform -translate-x-1/3 translate-y-1/3 opacity-20"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full transform translate-x-1/3 -translate-y-1/3 opacity-20"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full transform -translate-x-1/3 translate-y-1/3 opacity-20"></div>
         
         {/* Animated light beam */}
         <div 
@@ -159,13 +113,11 @@ export function Newsletter() {
         ></div>
         
         <div className="relative z-10 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-              Stay Updated with DataKai's Innovations
-            </span>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-transparent bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text">
+            Stay Updated with DataKai's Innovations
           </h2>
           
-          <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
+          <p className="text-gray-500 mb-8 max-w-3xl mx-auto">
             Subscribe to our newsletter to get the latest updates on our products, technology insights, and exclusive offers.
           </p>
           
@@ -179,7 +131,7 @@ export function Newsletter() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Your email address"
-                      className="px-6 py-4 rounded-l-md bg-zinc-800 border border-zinc-700 focus:border-zinc-600 outline-none text-white w-full transition-all duration-300"
+                      className="px-6 py-4 rounded-l-md bg-gray-100 border border-gray-300 focus:border-gray-400 outline-none text-black w-full transition-all duration-300"
                       style={{
                         borderColor: isHovered ? 'rgb(161, 161, 170)' : '',
                         boxShadow: isHovered ? '0 0 10px rgba(255, 255, 255, 0.1)' : 'none'
@@ -188,7 +140,7 @@ export function Newsletter() {
                   </div>
                   <button 
                     type="submit"
-                    className="group px-8 py-4 rounded-r-md bg-gradient-to-r from-gray-100 to-white text-black font-semibold transition-all duration-300 flex items-center justify-center"
+                    className="group px-8 py-4 rounded-r-md bg-blue-600 text-white font-semibold transition-all duration-300 flex items-center justify-center"
                     style={{
                       transform: isHovered ? 'scale(1.02)' : 'scale(1)'
                     }}
@@ -198,7 +150,7 @@ export function Newsletter() {
                   </button>
                 </>
               ) : (
-                <div className="w-full flex items-center justify-center py-4 px-6 bg-zinc-800 border border-green-500/50 rounded-md text-green-400 space-x-2 animate-fadeIn">
+                <div className="w-full flex items-center justify-center py-4 px-6 bg-green-800 border border-green-500/50 rounded-md text-green-400 space-x-2 animate-fadeIn">
                   <CheckCircle2 size={20} />
                   <span>Thanks for subscribing! We'll be in touch.</span>
                 </div>
@@ -232,7 +184,7 @@ export function Newsletter() {
         .particle {
           position: absolute;
           background-color: rgba(255, 255, 255, 0.4);
-          border-radius: 50%;
+          border-radius: 0%;
           pointer-events: none;
         }
         

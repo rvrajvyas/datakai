@@ -12,7 +12,7 @@ export function Contact() {
             <span className="inline-block text-gray-400 text-sm tracking-wider uppercase mb-3">
               Contact Us
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
               Let's Build Something Amazing Together
             </h2>
             <p className="text-gray-400 mb-8">
@@ -34,20 +34,20 @@ export function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-zinc-900 p-8 rounded-lg border border-zinc-800">
+          <div className="bg-zinc-900 p-8 rounded-lg border border-zinc-800 shadow-lg">
             <h3 className="text-xl font-semibold text-white mb-6">Send us a message</h3>
             <form className="space-y-4">
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:border-gray-500"
+                className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500"
               />
               <input
                 type="email"
                 placeholder="Your Email"
-                className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:border-gray-500"
+                className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500"
               />
-              <select className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:border-gray-500">
+              <select className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500">
                 <option value="" disabled selected>Select Service</option>
                 <option value="ai">AI Solutions</option>
                 <option value="gaming">Gaming Development</option>
@@ -57,11 +57,11 @@ export function Contact() {
               <textarea
                 placeholder="Your Message"
                 rows={4}
-                className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:border-gray-500"
+                className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500"
               ></textarea>
               <button
                 type="submit"
-                className="w-full px-6 py-4 rounded-md bg-gradient-to-r from-gray-100 to-white text-black font-semibold hover:scale-105 transition-transform"
+                className="w-full px-6 py-4 rounded-md bg-gradient-to-r from-purple-600 to-purple-400 text-white font-semibold hover:scale-105 transition-transform tracking-wide"
               >
                 Send Message
               </button>
