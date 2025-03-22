@@ -1,7 +1,6 @@
 // page.tsx
 import { HeroParallax } from "@/components/ui/hero";
 import { HeroOverlay } from "@/components/ui/HeroOverlay";
-import { LampDemo } from "@/components/ui/landing";
 // import { CardGrid } from "@/components/ui/card";   
 import { Card3DScroll } from "@/components/ui/card3dsctroll"; // This will use our new component
 import { Card3D } from "@/components/ui/3dcard";
