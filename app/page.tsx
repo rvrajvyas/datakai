@@ -24,9 +24,19 @@ export default function Page() {
 
 
   
+      <HeroParallax
+          products={[
+            { title: 'AI Avatar', link: '/product1', thumbnail: '/images/ai.jpg' },
+            { title: 'AR/VR', link: '/product2', thumbnail: '/images/arvr.jpg' },
+            { title: 'Content resource', link: '/product1', thumbnail: '/images/crm.jpg' },
+            { title: 'Social Media Management', link: '/product2', thumbnail: '/images/socialmedia.jpg' },
+            { title: 'Gaming', link: '/product1', thumbnail: '/images/hero6.jpg' },
+            
+            
+          ]}
+        />
 
-
-      {/* <HeroSection/> */}
+      
       <HeroOverlay/>
    
        
@@ -34,7 +44,7 @@ export default function Page() {
       <section className="relative py-24">
      
 
-        {/* ✅ Overlay Using RGBA Instead of bg-opacity */}
+        {/* ✅ Overlay Using RGBA Instead of bg-opacity */}o2
         <div
           className="absolute inset-0 z-5"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }} // 50% opacity black overlay
@@ -49,7 +59,7 @@ export default function Page() {
           <h2 className="text-6xl font-bold mb-1 tracking-wide">Built For Performance</h2>
 
           {/* 3D Cards */}
-          <Card3DScroll />
+          <Card3DScroll /> 
         </div>
       </section>
       
@@ -58,9 +68,9 @@ export default function Page() {
         <Technology/>
       </section>
       
-      <section>
+      {/* <section>
         <Stats/>
-      </section>
+      </section> */}
       
       {/* Case Studies Section */}
       <section id="case-studies">

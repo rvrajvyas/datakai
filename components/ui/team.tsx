@@ -53,7 +53,7 @@ export function Team() {
         {/* Background grid pattern */}
         <div className="absolute inset-0" 
           style={{
-            backgroundImage: 'radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.2) 2px, transparent 0)',
+            backgroundImage: 'radial-gradient(circle at 25px 25px, rgba(212, 48, 48, 0.2) 2px, transparent 0)',
             backgroundSize: '50px 50px'
           }}
         />
@@ -80,7 +80,7 @@ export function Team() {
           <span className="inline-block text-black text-sm tracking-wider uppercase mb-3">
             Our Experts
           </span>
-          <h2 className="text-6xl md:text-5xl font-bold text-center text-black mb-4">
+          <h2 className="text-6xl md:text-5xl font-bold text-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent mb-4">
             The Minds Behind DataKai
           </h2>
           <p className="text-gray-700 max-w-3xl mx-auto">

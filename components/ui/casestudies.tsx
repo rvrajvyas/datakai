@@ -35,7 +35,7 @@ export function CaseStudies() {
           <span className="inline-block text-gray-400 text-sm tracking-wider uppercase mb-3">
             Success Stories
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500  bg-clip-text text-transparent">
             Our Impact Across Industries
           </h2>
         </div>

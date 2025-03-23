@@ -30,7 +30,7 @@ export function Testimonials() {
 
   return (
     <section className="py-24 px-6 bg-white relative">
-      <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-white to-transparent opacity-80"></div>
+      <div className="absolute top-0 left-0 w-full h-64 "></div>
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
