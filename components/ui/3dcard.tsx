@@ -49,7 +49,7 @@ export const CardContainer = ({
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
         className={cn(
-          "py-20 flex items-center justify-center",
+          "py-20 flex items-center justify-start",
           containerClassName
         )}
         style={{
@@ -62,7 +62,7 @@ export const CardContainer = ({
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           className={cn(
-            "flex items-center justify-center relative transition-all duration-200 ease-linear",
+            "flex items-center justify-start relative transition-all duration-200 ease-linear",
             className
           )}
           style={{
@@ -160,17 +160,17 @@ export const useMouseEnter = () => {
 export function Card3D({ title, description, image }: { title: string; description: string; image: string }) {
   return (
     <CardContainer>
-      <CardBody className="bg-zinc-900 text-white p-6 rounded-xl border border-zinc-800 shadow-lg shadow-lg h-[500px]">
+      <CardBody className="bg-white text-black p-6 rounded-xl border border-zinc-800 shadow-lg shadow-lg h-[500px]">
         {/* Image */}
         <CardItem translateZ={20} className="w-full h-48 overflow-hidden rounded-lg mb-4">
           <Image src={image} alt={title} width={300} height={200} className="object-cover w-full h-full rounded-lg" />
         </CardItem>
 
         {/* Text Content */}
-        <CardItem translateZ={30} className="text-xl font-semibold">
+        <CardItem translateZ={30} className="text-2xl font-semibold bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent mb-2 relative z-10">
           {title}
         </CardItem>
-        <CardItem translateZ={20} className="text-gray-400 mt-2">
+        <CardItem translateZ={20} className="text-black-400 text-left  mt-2">
           {description}
         </CardItem>
       </CardBody>

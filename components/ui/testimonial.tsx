@@ -29,9 +29,7 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-white relative">
-      <div className="absolute top-0 left-0 w-full h-64 "></div>
-      <div className="max-w-7xl mx-auto relative z-10">
+    <div className="p-8">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
             <div className="flex">
@@ -40,7 +38,7 @@ export function Testimonials() {
               ))}
             </div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-6">
+          <h2 className="text-3xl md:text-4xl font-LemonMilk text-center text-black mb-6">
             What Our Clients Say
           </h2>
         </div>
@@ -69,6 +67,6 @@ export function Testimonials() {
           ))}
         </div>
       </div>
-    </section>
+   
   );
 }

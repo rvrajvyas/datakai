@@ -40,14 +40,14 @@ export function Team() {
   }, []);
 
   const team = [
-    { name: "Alex Chen", role: "CEO & Founder" },
-    { name: "Sarah Johnson", role: "CTO" },
+    { name: "Raj Vyas", role: "Co-Founder" },
+    { name: "Rishiraj Singh Rathore", role: "Co-Founder" },
     { name: "Michael Kumar", role: "Head of AI" },
-    { name: "Emily Rodriguez", role: "Lead Game Designer" },
+    { name: "Marin Kitagawa ", role: "Social Media Manager" },
   ];
 
   return (
-    <section id="team" className="py-24 px-6 bg-white relative overflow-hidden">
+    <section id="team" className="pt-0 px-6 ">
       {/* Background effects */}
       <div className="absolute inset-0 opacity-10">
         {/* Background grid pattern */}
@@ -76,28 +76,30 @@ export function Team() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16 opacity-0 animate-teamFadeIn" style={{ animationDelay: '0.1s' }}>
-          <span className="inline-block text-black text-sm tracking-wider uppercase mb-3">
-            Our Experts
-          </span>
-          <h2 className="text-6xl md:text-5xl font-bold text-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent mb-4">
-            The Minds Behind DataKai
-          </h2>
-          <p className="text-gray-700 max-w-3xl mx-auto">
-            Our team combines decades of experience in AI, gaming, and educational technology
-            to deliver innovative solutions for tomorrow's challenges.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
-          {team.map((member, index) => (
-            <TeamMember 
-              key={index} 
-              {...member} 
-              isActive={activeIndex === index}
-              onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-            />
-          ))}
+        <div className="p-8 border-t border-gray-100">
+          <div className="text-center mb-16 opacity-0 animate-teamFadeIn" style={{ animationDelay: '0.1s' }}>
+            <span className="inline-block text-black text-sm tracking-wider uppercase mb-3">
+              Our Experts
+            </span>
+            <h2 className="text-6xl md:text-5xl font-LemonMilk text-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent mb-4">
+              The Minds Behind DataKai
+            </h2>
+            <p className="text-gray-700 max-w-3xl mx-auto">
+              Our team combines decades of experience in AI, gaming, and educational technology
+              to deliver innovative solutions for tomorrow's challenges.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+            {team.map((member, index) => (
+              <TeamMember 
+                key={index} 
+                {...member} 
+                isActive={activeIndex === index}
+                onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+              />
+            ))}
+          </div>
         </div>
       </div>
       

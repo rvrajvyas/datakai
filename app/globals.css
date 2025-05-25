@@ -23,6 +23,7 @@
 }
 
 body {
+  font-family: 'Imperium', sans-serif;
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
@@ -42,23 +43,48 @@ body {
   font-family: 'Cool';
   src: url('../public/fonts/Coolvetica_Tg.otf') format('opentype');
 }
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../public/fonts/poppins.regular.ttf') format('truetype');
+}
+
 @font-face {
   font-family: 'Imperium';
-  src: url('../public/fonts/IMPERIUM.ttf') format('truetype');
+  src: url('/fonts/IMPERIUM.ttf') format('truetype');
+  font-display: swap; /* Add this line */
 }
 @font-face {
   font-family: 'Sunflare';
-  src: url('../public/fonts/Sunflare.ttf') format('truetype');
+  src: url('/fonts/Sunflare.ttf') format('truetype');
 }
 @font-face {
   font-family: 'RC';
   src: url('../public/fonts/RC.otf') format('opentype');
+  font-display: swap; /* Add this line */
+}
+@font-face {
+  font-family: 'maus';
+  src: url('../public/fonts/maus.ttf') format('truetype');
+  
+}
+@font-face {
+  font-family: 'LemonMilk';
+  src: url('../public/fonts/LEMONMILK-Regular.otf') format('opentype');
+  
 }
 
+@font-face {
+  font-family: 'Brunson';
+  src: url('../public/fonts/Brunson.ttf') format('truetype');
+}
+
+
 body {
-  font-family: 'Cool', sans-serif;
+  font-family: 'poppins', sans-serif;
   -ms-overflow-style: none !important;  /* IE and Edge */
-  scrollbar-width: none !important;     /* Firefox */
+  scrollbar-width: none !important;  
+  scroll-behavior: smooth;   /* Firefox */
   overflow-x: hidden;
 }
 
@@ -68,3 +94,87 @@ body::-webkit-scrollbar {
 }
 
 
+/* Custom classes for components */
+.font-imperium {
+  font-family: 'Imperium', sans-serif;
+}
+
+.font-sunflare {
+  font-family: 'Sunflare', serif;
+}
+
+.font-cool {
+  font-family: 'Cool', sans-serif;
+}
+
+.font-rc {
+  font-family: 'RC', serif;
+}
+.font-poppins {
+  font-family: 'poppins', serif;
+}
+.font-maus {
+  font-family: 'maus', serif;
+}
+
+.font-LemonMilk {
+ font-family: 'LemonMilk', serif;
+}
+
+.font-Bruson {
+  font-family: 'Brunson', serif;
+}
+
+
+
+
+
+
+
+/* Add these in your global CSS (globals.css) or in your tailwind.config.js */
+@keyframes fontChange1 {
+  0% {
+    font-family: 'Sunflare', serif;
+    font-display: black;
+  }
+  50% {
+    font-family: 'Cool', sans-serif;
+  }
+  100% {
+    font-family: 'RC', serif;
+  }
+}
+
+@keyframes fontChange2 {
+  0% {
+    font-family: 'RC', serif;
+  }
+  50% {
+    font-family: 'Poppins', sans-serif;
+  }
+  100% {
+    font-family: 'Maus', serif;
+  }
+}
+
+/* Applying the animations to the respective spans */
+.animate-fontChange1 {
+  animation: fontChange1 6s ease-in-out infinite;
+}
+
+.animate-fontChange2 {
+  animation: fontChange2 6s ease-in-out infinite;
+}
+
+
+.scroll-reveal-text {
+  color: black;
+  transition: color 0.5s ease-in-out;
+  position: relative;
+  opacity: 0.3;
+}
+
+.scroll-reveal-text.visible {
+  color: white;
+  opacity: 1;
+}

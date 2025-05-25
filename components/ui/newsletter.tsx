@@ -60,72 +60,55 @@ export function Newsletter() {
   };
 
   return (
-    <section className="py-16 px-6 bg-white relative overflow-hidden">
+    <section className="py-16 px-6 relative overflow-hidden">
       {/* Background with cool tech circuit patterns */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" 
-          style={{
-            backgroundImage: 'radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.2) 2px, transparent 0)',
-            backgroundSize: '50px 50px'
-          }}
-        />
-        
-        {/* Animated glow orbs */}
-        {[...Array(5)].map((_, i) => (
-          <div 
-            key={i} 
-            className="absolute rounded-full blur-3xl"
+      <div className=" p-6 rounded-2xl shadow-2xl bg-white relative z-10">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0"
             style={{
-              width: `${Math.random() * 200 + 100}px`,
-              height: `${Math.random() * 200 + 100}px`,
-              backgroundColor: `rgba(255, 255, 255, 0.03)`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animation: `pulse-glow ${Math.random() * 10 + 15}s infinite alternate`
+              backgroundImage: 'radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.2) 2px, transparent 0)',
+              backgroundSize: '50px 50px'
             }}
           />
-        ))}
-      </div>
-      
-      {/* Floating particles container */}
-      <div id="particles-container" className="absolute inset-0 overflow-hidden pointer-events-none" />
-      
-      <div 
-        className="max-w-5xl mx-auto bg-white p-12 rounded-xl border border-gray-300 relative overflow-hidden shadow-lg"
-        style={{
-          boxShadow: isHovered ? '0 0 30px rgba(255, 255, 255, 0.1)' : '0 0 20px rgba(0, 0, 0, 0.5)'
-        }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full transform translate-x-1/3 -translate-y-1/3 opacity-20"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full transform -translate-x-1/3 translate-y-1/3 opacity-20"></div>
-        
-        {/* Animated light beam */}
-        <div 
-          className="absolute h-full w-20 bg-gradient-to-r from-transparent via-white to-transparent opacity-0"
-          style={{
-            left: '-10%',
-            top: '0',
-            animation: 'lightBeam 5s ease-in-out infinite'
-          }}
-        ></div>
-        
-        <div className="relative z-10 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-transparent bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text">
+          
+          {/* Animated glow orbs */}
+          {[...Array(5)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute rounded-full blur-3xl"
+              style={{
+                width: `${Math.random() * 200 + 100}px`,
+                height: `${Math.random() * 200 + 100}px`,
+                backgroundColor: `rgba(255, 255, 255, 0.03)`,
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animation: `pulse-glow ${Math.random() * 10 + 15}s infinite alternate`
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Floating particles container */}
+        <div id="particles-container" className="absolute inset-0 overflow-hidden pointer-events-none" />
+
+        <div
+          className="relative text-center z-20"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <h2 className="text-2xl md:text-3xl font-LemonMilk mb-6 text-transparent bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text">
             Stay Updated with DataKai's Innovations
           </h2>
-          
+
           <p className="text-gray-500 mb-8 max-w-3xl mx-auto">
             Subscribe to our newsletter to get the latest updates on our products, technology insights, and exclusive offers.
           </p>
-          
+
           <form onSubmit={handleSubmit} className="relative">
             <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0">
               {!isSubmitted ? (
                 <>
-                  <div className="relative w-full md:max-w-sm">
+                  <div className="relative w-full md:max-w-md">
                     <input
                       type="email"
                       value={email}
@@ -138,7 +121,7 @@ export function Newsletter() {
                       }}
                     />
                   </div>
-                  <button 
+                  <button
                     type="submit"
                     className="group px-8 py-4 rounded-r-md bg-blue-600 text-white font-semibold transition-all duration-300 flex items-center justify-center"
                     style={{
@@ -157,13 +140,13 @@ export function Newsletter() {
               )}
             </div>
           </form>
-          
+
           <p className="text-gray-500 text-sm mt-4">
             We respect your privacy. Unsubscribe at any time.
           </p>
         </div>
       </div>
-      
+
       <style jsx global>{`
         @keyframes lightBeam {
           0% { transform: translateX(0) skewX(-15deg); opacity: 0; }
@@ -171,23 +154,23 @@ export function Newsletter() {
           26% { opacity: 0; }
           100% { opacity: 0; }
         }
-        
+
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(-10px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .animate-fadeIn {
           animation: fadeIn 0.4s ease-out forwards;
         }
-        
+
         .particle {
           position: absolute;
           background-color: rgba(255, 255, 255, 0.4);
           border-radius: 0%;
           pointer-events: none;
         }
-        
+
         @keyframes float {
           0% { transform: translateY(0) translateX(0); opacity: 0; }
           10% { opacity: 0.2; }

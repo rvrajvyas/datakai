@@ -12,7 +12,7 @@ export function Contact() {
             <span className="inline-block text-gray-400 text-sm tracking-wider uppercase mb-3">
               Contact Us
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-LemonMilk mb-6 bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
               Let's Build Something Amazing Together
             </h2>
             <p className="text-gray-400 mb-8">
@@ -24,7 +24,7 @@ export function Contact() {
             <div className="space-y-6">
               <a href="mailto:contact@datakai.com" className="flex items-center text-white hover:text-gray-300 transition-colors">
                 <Mail size={20} className="mr-4" />
-                contact@datakai.com
+                contact@datakai.in
               </a>
               <div className="flex items-center text-white">
                 <Globe size={20} className="mr-4" />

@@ -1,6 +1,3 @@
-
-
-// components/ui/card3dsctroll.tsx
 "use client";
 
 import { Card3D } from "@/components/ui/3dcard";
@@ -14,32 +11,32 @@ export function Card3DScroll() {
   const cardData = [
     {
       title: "High performance",
-      description: "Our infrastructure is built for speed and reliability, ensuring your applications run smoothly at scale.",
+      description: "Whether you're launching a new product or scaling to millions of users, we ensures your application stays fast, reliable, and ready for anything. Trust isn't given — it's earned through performance, and we help you win it.",
       image: "/images/performance.jpg"
     },
     {
-      title: "Advanced Security",
-      description: "Enterprise-grade security protocols keep your data and applications safe from threats.",
-      image: "/images/security.jpg"
+      title: "Advanced Security ",
+      "description": "We deliver enterprise-grade security protocols across every layer, ensuring your data and applications stay protected around the clock. Our security is designed to scale with your business — without slowing you down.",
+      "image": "/images/security.jpg"
     },
     {
       title: "Cloud Integration",
-      description: "Seamless integration with leading cloud platforms for maximum flexibility and scalability.",
+      description: "We offer seamless integration with leading cloud platforms, unlocking maximum flexibility and scalability for your applications. Our solution ensures smooth connections across multiple environments, giving you the freedom to scale, adapt, and innovate without limits.",
       image: "/images/cloud.jpg"
     },
     {
       title: "Real-time Analytics",
-      description: "Gain valuable insights with our powerful analytics tools, monitoring every aspect of performance.",
+      description: "We help you integrate powerful, real-time analytics into your systems. With our seamless integration, you can monitor key metrics, make data-driven decisions, and optimize performance in real time to stay ahead of the competition.",
       image: "/images/analytics.jpg"
     },
     {
       title: "Global Availability",
-      description: "Distributed infrastructure ensures your services are available anywhere, anytime.",
+      description: "We follow a distributed infrastructure model to ensure your services are always available, no matter where your users are. This architecture provides unmatched reliability and speed, keeping your applications running smoothly around the clock, anywhere in the world.",
       image: "/images/global.jpg"
     },
     {
       title: "Responsive Design",
-      description: "All our solutions are built with responsive design to work flawlessly across all devices.",
+      description: "We design all our solutions to be fully responsive, ensuring they perform flawlessly across any device. From smartphones to desktops, our platform adjusts seamlessly to deliver the best experience, no matter how your users access it.",
       image: "/images/design.jpg"
     }
   ];
@@ -115,7 +112,7 @@ export function Card3DScroll() {
         ref={scrollRef}
         className="overflow-x-auto no-scrollbar w-screen -ml-[calc(50vw-50%)] scroll-smooth"
       >
-        <div className="flex space-x-8 pl-8 md:pl-12 lg:pl-16 pr-8 md:pr-12 lg:pr-16 w-max py-8">
+        <div className="flex space-x-8 pl-8 md:pl-12 lg:pl-16 pr-8 md:pr-12 lg:pr-16 w-max py-8 justify-start">
           {/* Map through all cards */}
           {cardData.map((card, index) => (
             <div 
@@ -135,13 +132,8 @@ export function Card3DScroll() {
           ))}
         </div>
       </div>
-      
-      {/* Optional scroll indicators */}
-      <div className="hidden md:flex justify-center mt-4 space-x-2">
-        <div className="h-1 w-8 bg-gray-300 rounded-full"></div>
-        <div className="h-1 w-8 bg-gray-500 rounded-full"></div>
-        <div className="h-1 w-8 bg-gray-300 rounded-full"></div>
-      </div>
+
+  
     </div>
   );
 }

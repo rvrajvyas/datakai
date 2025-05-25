@@ -56,7 +56,7 @@ export function Technology() {
           <span className="inline-block text-white-400 text-sm tracking-wider uppercase mb-3">
             Technology Stack
           </span>
-          <h2 className="text-8xl md:text-4xl font-bold text-white tracking-wider">
+          <h2 className="text-8xl md:text-4xl font-LemonMilk text-black tracking-wider">
             Powered by Cutting-Edge Tech
           </h2>
         </div>

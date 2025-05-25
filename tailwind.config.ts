@@ -14,7 +14,7 @@ const config = {
       },
       fontFamily: {
         cool: ['Cool', 'sans-serif'],
-        imperium: ['Imperium', 'anas-serif'],
+        imperium: ['Imperium', 'sans-serif'],
         sunflare: ['Sunflare', 'serif'],
         rc: ['RC', 'serif'],
       },

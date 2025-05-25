@@ -8,7 +8,7 @@ export function Footer() {
           
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent mb-4">
+            <div className="text-2xl font-LemonMilk bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent text-transparent mb-4">
               DataKai
             </div>
             <p className="text-gray-400 mb-6 max-w-md">

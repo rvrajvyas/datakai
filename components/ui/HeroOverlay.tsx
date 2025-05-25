@@ -15,7 +15,7 @@ export const HeroOverlay = () => {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   // Adjust opacity for text to make it fully visible from the start
-  const textOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5], [0, 1, 1]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.5, 0.5], [0, 1, 1]);
 
   // Smooth parallax effect for the text elements
   const x1 = useTransform(scrollYProgress, [0.3, 1], ["-30%", "40%"]);
@@ -28,28 +28,28 @@ export const HeroOverlay = () => {
   return (
     <section
       ref={ref}
-      className="relative h-[140vh] overflow-hidden bg-white"
+      className="relative h-[160vh] overflow-hidden bg-black"
     >
       {/* Parallax Text fades in with scroll */}
       <motion.div
         style={{ opacity: textOpacity, y: yPosition }}
-        className="h-screen sticky top-0 flex flex-col justify-center items-center z-10 space-y-14"
+        className="h-screen sticky top-0 flex flex-col justify-center items-center z-10 space-y-5"
       >
         
         <motion.div
           style={{ x: x1 }}
-          className="text-[7vw] font-montserrat font-bold whitespace-nowrap text-black"
+          className="text-[6.5vw] font-cool font-bold whitespace-nowrap text-white tracking-wide"
         >
             From data to destiny                           
         </motion.div>
         <motion.div
           style={{ x: x2 }}
-          className="text-[7vw] font-montserrat font-bold whitespace-nowrap bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
+          className="text-[7vw] font-maus font-bold whitespace-nowrap bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 tracking-wider "
         > we’re here to
         </motion.div>
         <motion.div
           style={{ x: x3 }}
-          className="text-[7vw] font-poppins font-bold whitespace-nowrap text-black"
+          className="text-[6.5vw] font-cool font-bold whitespace-nowrap text-white tracking-wide "
         >
           to rewrite the future
           </motion.div>

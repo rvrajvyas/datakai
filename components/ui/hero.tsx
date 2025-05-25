@@ -9,6 +9,7 @@ import {
 } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { Cover } from "@/components/ui/heroalternative"
  
 export const HeroParallax = ({ products }: { products: { title: string; link: string; thumbnail: string; }[]; }) => {
   const firstRow = products.slice(0, 3);
@@ -39,7 +40,7 @@ export const HeroParallax = ({ products }: { products: { title: string; link: st
         style={{
           rotateX,
           rotateZ,
-          translateY,
+          translateY, 
           opacity,
         }}
         className=""
@@ -67,9 +68,11 @@ export const HeroParallax = ({ products }: { products: { title: string; link: st
 export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-7xl md:text-7xl font-bold dark:text-white tracking-wider">
-        Shaping  Digital Future
-      </h1>
+     <div>
+     <h1 className="text-6xl md:text-7xl lg:text-8xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+  Shaping digital <br /><Cover>future</Cover>
+</h1>
+    </div>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 tracking-wide ">
       Crafting the future, one pixel at a time, we breathe life into ideas that inspire.
       </p>

@@ -35,7 +35,7 @@ export function CustomNavbar() {
   }, [scrolled]);
 
   // Define specific section ID types
-  type SectionId = 'products' | 'technology' | 'case-studies' | 'team' | 'contact';
+  type SectionId = 'productsdemo' | 'technology' | 'case-studies' | 'team' | 'contact';
 
   const scrollToSection = (sectionId: SectionId): void => {
     const section = document.getElementById(sectionId);
@@ -61,7 +61,7 @@ export function CustomNavbar() {
       {/* Navigation items on the right */}
       <div className="ml-auto flex items-center space-x-6">
         <button 
-          onClick={() => scrollToSection('products')} 
+          onClick={() => scrollToSection('productsdemo')} 
           className="hover:text-blue-400 transition-colors cursor-pointer"
         >
           Products
