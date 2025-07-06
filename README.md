@@ -1,8 +1,22 @@
-# React + Vite
+# DataKai
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Install Dependencies
 
-Currently, two official plugins are available:
+```bash
+npm install
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Run Development Server
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:3000`
+
+## Available Scripts
+
+- `npm run dev` - Start development server with Turbopack
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
